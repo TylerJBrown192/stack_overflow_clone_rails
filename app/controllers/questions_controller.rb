@@ -1,10 +1,12 @@
 class QuestionsController < ApplicationController
   def new
-    @question = Question.new
+    @user = User.find(params[:user_id])
+    @question = @user.questions.new
   end
 
   def create
-    @question = Question.new(question_params)
+    @user = User.find(params[:user_id])
+    @question = @user.questions.new(question_params)
     if @question.save
       flash[:notice] = "Thanks for asking! Please check back to see responces."
       redirect_to user_path(current_user)
@@ -16,6 +18,29 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:user_id])
+    @question = @user.questions.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(params[:question])
+      flash[:notice] = "Question successfully updated!"
+      redirect_to user_path(current_user)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.destroy
+      flash[:alert] = "Question successfully deleted!"
+    end
+    redirect_to user_path(current_user)
   end
 
 private
