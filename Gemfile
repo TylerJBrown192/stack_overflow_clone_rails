@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
-
 gem 'rails'
 gem 'pg'
-gem 'pivotal_git_scripts'
+gem 'factory_girl_rails'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -12,8 +11,6 @@ gem 'turbolinks'
 gem 'bcrypt','~> 3.1.7', require: "bcrypt"
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootstrap_form'
-gem 'bootstrap-datetimepicker-rails'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development do
   gem 'byebug'

@@ -15,3 +15,12 @@
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+$font-stack: 'Raleway', sans-serif;
+// $primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  //  color: $primary-color;
+}

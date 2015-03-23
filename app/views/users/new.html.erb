@@ -1,0 +1,9 @@
+<%= render 'shared/header', title: "Sign up" %>
+
+<%= bootstrap_form_for(@user) do |f| %>
+<%=f.text_field :user_name %>
+<%=f.text_field :email %>
+<%=f.password_field :password %>
+<%=f.password_field :password_confirmation %>
+<%=f.submit "Sign Up" %>
+<%end%>
