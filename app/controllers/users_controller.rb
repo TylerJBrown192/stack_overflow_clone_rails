@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    # @user = User.find(params[:id])
   end
 
   def show
@@ -15,8 +16,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Thanks for joining!"
-      redirect_to users_path
+      UserMailer.signup_confirmation(@user).deliver
+      flash[:notice] = "Thanks for joining! An email has been sent to your account. Please log in."
+      redirect_to '/log-in'
     else
       flash[:alert] = "There was an error, try again please."
       redirect_to :back

@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :questions
+  has_many :comments
   validates_presence_of :user_name
-  validates_presence_of :user_email
+  validates_presence_of :email
 
   attr_accessor :password
   validates_confirmation_of :password
