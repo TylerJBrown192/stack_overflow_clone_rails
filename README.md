@@ -3,7 +3,15 @@ Stack Overflow Clone
 
 by Grace Mekarski and Tyler Brown
 
-Pizza Pizza is a web page written in Javascript that lets the user order a pizza specifying the size in inches with the amount of slices for each size and choose between pepperoni and cheese.
+Stack Overflow Clone is a Ruby on Rails app.
+
+
+TO DO:
+-comments to questions
+-view all questions
+-ajax
+-photos
+-that days work
 
 Installation
 ------------
