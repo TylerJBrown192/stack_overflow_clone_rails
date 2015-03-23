@@ -1,0 +1,16 @@
+<%= render 'shared/header', title: "Edit Your Account" %>
+
+<%= bootstrap_form_for(@user) do |f| %>
+<%=f.text_field :email %>
+<%=f.text_field :user_name %>
+<%=f.password_field :password %>
+<%=f.password_field :password_confirmation %>
+<%=f.submit "Edit" %>
+<%end%>
+
+
+
+
+  <%= link_to "Delete Account", user_path(@user),
+  data: {confirm: "Are you sure?",
+  method: :delete} %>
