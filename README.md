@@ -9,9 +9,9 @@ Stack Overflow Clone is a Ruby on Rails app.
 TO DO:
 -comments to questions
 -view all questions
--ajax
--photos
--that days work
+-capy & FactoryGirl
+-email to responses
+-upvotes
 
 Installation
 ------------
@@ -24,6 +24,12 @@ $ git clone https://github.com/gracelauren/stack_overflow_clone.git
 Open Stack Overflow Clone by going into the folder and clicking index.html or in the terminal type:
 ```
 $ cd stack_overflow_clone
+```
+```
+$ rake db:schema:load
+```
+```
+$ rake db:schema:load
 ```
 ```
 $ rails s

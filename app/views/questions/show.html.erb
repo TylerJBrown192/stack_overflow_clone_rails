@@ -1,0 +1,8 @@
+<%= render 'shared/header', title: @question.question_title %>
+
+<p class="q-content"><%= @question.question_content %></p>
+
+<% if @question.comments.any? %>
+<h4></h4>
+
+<% end %>

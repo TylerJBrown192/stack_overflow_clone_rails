@@ -1,25 +1,25 @@
 <%= render 'shared/header', title: @user.email %>
-<%= link_to "Have a Question?", new_user_question_path(@user) %>
+<%= link_to "Have a Question?", new_question_path, class:"btn, btn-success" %>
 
 
-<% if @user.questions.any? %>
+<% if current_user.questions.any? %>
 <h4>Your Questions:</h4>
 <ul>
-  <% @user.questions.each do |question| %>
-  <li>
+  <% current_user.questions.each do |question| %>
     <li>  <%= link_to question.question_title, question_path(question) %> : <%= question.created_at %> |
-      <%= link_to "Edit", edit_user_question_path(@user, question) %> |
-      <%= link_to "Delete", user_question_path(@user, question),
-      :data => {:confirm => "You sure?",
-        :method => "delete"} %>
-      </li>
+      <%= link_to "Edit", edit_question_path(question) %> |
+      <%= link_to "Delete", question_path(question),
+                            :data => {:confirm => "You sure?",
+                                      :method => "delete"} %>
+    </li>
       <ul>
         <li> <%= question.question_content %></li>
       </ul>
-    </ul>
+</ul>
     <% end %>
-    <% else %>
-    <p>
+  <% else %>
+  <br>
+    <h4>
       Write your first question!
-    </p>
-    <% end %>
+    </h4>
+  <% end %>

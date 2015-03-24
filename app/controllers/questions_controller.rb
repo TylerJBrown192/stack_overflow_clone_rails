@@ -1,12 +1,10 @@
 class QuestionsController < ApplicationController
   def new
-    @user = User.find(params[:user_id])
-    @question = @user.questions.new
+    @question = current_user.questions.new
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @question = @user.questions.new(question_params)
+    @question = current_user.questions.new(question_params)
     if @question.save
       flash[:notice] = "Thanks for asking! Please check back to see responces."
       redirect_to user_path(current_user)
@@ -21,8 +19,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @question = @user.questions.find(params[:id])
+    @question = current_user.questions.find(params[:id])
   end
 
   def update
