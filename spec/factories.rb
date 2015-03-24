@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory(:user) do
     user_name('John Smith')
-    user_email('johnnyboy@gmail.com')
+    email('johnnyboy@gmail.com')
     password('johnnybravo1234')
+    id(1)
   end
 
   factory(:question) do

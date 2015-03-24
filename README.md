@@ -1,16 +1,15 @@
 Stack Overflow Clone
 ==============
 
-by Grace Mekarski and Tyler Brown
+Authors
+------------
+Grace Mekarski and Tyler Brown
 
-Stack Overflow Clone is a Ruby on Rails app.
 
+Overview
+------------
+Stack Overflow Clone is a Ruby on Rails app. It allows a new user to sign up and, on successful account creation, a confirmation email is sent to them. The signed in user can then view all questions posted to the app, pose a question for the user base themselves, or post a response answering another user's question. If the user's posted question is responded to, they receive an email notifying them.
 
-TO DO:
--view all questions
--capy & FactoryGirl
--email to responses
--upvotes
 
 Installation
 ------------
@@ -25,7 +24,7 @@ Open Stack Overflow Clone by going into the folder and clicking index.html or in
 $ cd stack_overflow_clone
 ```
 ```
-$ rake db:schema:load
+$ rake db:create
 ```
 ```
 $ rake db:schema:load

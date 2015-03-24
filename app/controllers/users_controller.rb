@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:notice] = "Account destroyed!"
-    redirect_to '/'
+    redirect_to :log_out
   end
 
 
