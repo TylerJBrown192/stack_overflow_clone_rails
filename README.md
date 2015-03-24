@@ -16,7 +16,7 @@ Installation
 
 Install Stack Overflow Clone by first cloning the repository.  
 ```
-$ git clone https://github.com/gracelauren/stack_overflow_clone.git
+$ git clone https://github.com/TylerJBrown192/stack_overflow_clone_rails.git
 ```
 
 Open Stack Overflow Clone by going into the folder and clicking index.html or in the terminal type:
