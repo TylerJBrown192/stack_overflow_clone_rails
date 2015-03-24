@@ -1,0 +1,9 @@
+<h1> <%= @user.user_name %></h1>
+
+<p>
+  You got a response to a question you posted! Check it out below:
+</p>
+
+<p>
+  <%= link_to "Your Question", question_url(@user) %>
+</p>

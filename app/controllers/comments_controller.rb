@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:question_id])
     @comment = current_user.comments.new(comment_params)
     @comment.question_id = params[:question_id]
     if @comment.save
-      # email for user responded to should go here
+      UserMailer.response_confirmation(@user).deliver
       flash[:notice] = "Thanks for posting your comment!"
       redirect_to question_path(@comment.question_id)
     else
