@@ -1,1 +1,20 @@
 <%= render 'shared/header', title: "Home" %>
+
+<% if @questions.any? %>
+<h2>All Posted Questions:</h2>
+
+<ul>
+  <% @questions.each do |question| %>
+  <li> <h4><%= link_to question.question_title, question_path(question) %></h4>
+      <ul>
+        <li><%= question.question_content %></li>
+      </ul>
+  </li>
+  <% end %>
+</ul>
+
+  <% else %>
+  <br>
+
+  <h4>There are no questions yet.</h4>
+<% end %>

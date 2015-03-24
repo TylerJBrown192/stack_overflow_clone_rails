@@ -7,7 +7,6 @@ Stack Overflow Clone is a Ruby on Rails app.
 
 
 TO DO:
--comments to questions
 -view all questions
 -capy & FactoryGirl
 -email to responses

@@ -1,4 +1,4 @@
-<%= render 'shared/header', title: @user.email %>
+<%= render 'shared/header', title: @user.user_name %>
 <%= link_to "Have a Question?", new_question_path, class:"btn, btn-success" %>
 
 
@@ -11,12 +11,12 @@
       <%= link_to "Delete", question_path(question),
                             :data => {:confirm => "You sure?",
                                       :method => "delete"} %>
-    </li>
       <ul>
         <li> <%= question.question_content %></li>
       </ul>
-</ul>
+    </li>
     <% end %>
+</ul>
   <% else %>
   <br>
     <h4>
