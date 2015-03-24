@@ -1,6 +1,6 @@
 <%= render 'shared/header', title: "New Question" %>
 
-<%= bootstrap_form_for [@user, @question] do |f| %>
+<%= bootstrap_form_for(@question) do |f| %>
 <%=f.text_field :question_title %>
 <%=f.text_area :question_content, size: "50X12" %>
 <%=f.submit "Ask Away!" %>

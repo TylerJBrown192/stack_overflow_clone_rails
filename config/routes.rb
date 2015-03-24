@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/log-out' => 'sessions#destroy', as: :log_out
 
   resources :users
-
+  
   resources :questions do
     resources :comments
   end
