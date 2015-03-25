@@ -10,4 +10,9 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: "You got a response to your question!"
   end
+
+  def delete_confirmation(user)
+    @user = user
+    mail to: user.email, subject: "Your account has been deleted"
+  end
 end

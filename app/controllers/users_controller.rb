@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    UserMailer.delete_confirmation(@user).deliver
     @user.destroy
     flash[:notice] = "Account destroyed!"
     redirect_to :log_out
