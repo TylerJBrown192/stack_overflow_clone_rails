@@ -1,8 +1,8 @@
 <nav class="navbar navbar-default">
   <ul class="nav navbar-nav">
 
-    <% if logged_in? %>
     <li><%= link_to 'Home', users_path %></li>
+    <% if logged_in? %>
     <li><%= link_to 'Your Page', user_path(current_user) %></li>
     <li><%= link_to 'Account Settings', edit_user_path(current_user) %></li>
     <li><%= link_to 'Logout', log_out_path %></li>

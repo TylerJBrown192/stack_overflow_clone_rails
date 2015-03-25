@@ -44,9 +44,7 @@ GNU GPL v2. Copyright 2015 Tyler Brown and Grace Mekarski
 
 TO DO FOR REAL
 -Upvotes
--Limiting only current user to edit / delete their own content
 -More Crappybara
 -Let grace style while I nap
 -...devise?
 -Heroku deployment / mailer
--Fix delete path

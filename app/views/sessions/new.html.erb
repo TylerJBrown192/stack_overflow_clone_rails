@@ -1,7 +1,7 @@
 <%= render 'shared/header', title: "Log In" %>
 
-<%= bootstrap_form_tag url: "/log-in" do %>
-<%=text_field_tag :email, "Your E-mail"%>
-<%=password_field_tag :password, "password" %>
-<%=submit_tag "Log in" %>
-<%end%>
+<%= bootstrap_form_tag url: "/log-in" do |f| %>
+  <%= f.text_field :email, placeholder: 'Your email' %>
+  <%= f.password_field :password, placeholder: "Password" %>
+  <%= f.submit "Log in" %>
+<% end %>

@@ -1,8 +1,8 @@
 <%= render 'shared/header', title: "Edit Your Account" %>
 
 <%= bootstrap_form_for(@user) do |f| %>
-<%=f.text_field :email %>
-<%=f.text_field :user_name %>
+<%=f.text_field :email, placeholder: 'New E-mail' %>
+<%=f.text_field :user_name, placeholder: 'New User Name'  %>
 <%=f.submit "Edit" %>
 <%end%>
 

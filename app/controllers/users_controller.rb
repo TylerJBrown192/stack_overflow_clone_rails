@@ -47,7 +47,6 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:alert] = "Account destroyed!"
     redirect_to "/"
-
   end
 
 

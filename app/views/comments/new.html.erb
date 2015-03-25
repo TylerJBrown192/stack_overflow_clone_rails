@@ -1,6 +1,6 @@
 <%= render 'shared/header', title: "New Response" %>
 
 <%= bootstrap_form_for [@question, @comment] do |f| %>
-<%=f.text_area :comment_content, size: "50X12" %>
+<%=f.text_area :comment_content, placeholder: 'Give a Response', size: "50X12" %>
 <%=f.submit "Give your feedback!" %>
 <%end%>
