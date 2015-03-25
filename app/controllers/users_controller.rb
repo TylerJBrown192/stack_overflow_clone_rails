@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.update(edit_params)
       flash[:notice]="You have successfully updated #{@user.user_name}!"
       redirect_to user_path(@user)
     else
@@ -44,8 +44,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     UserMailer.delete_confirmation(@user).deliver
     @user.destroy
-    flash[:notice] = "Account destroyed!"
-    redirect_to :log_out
+    session[:user_id] = nil
+    flash[:alert] = "Account destroyed!"
+    redirect_to "/"
+
   end
 
 
@@ -54,5 +56,10 @@ private
   def user_params
     params.require(:user).permit(:user_name, :email, :password, :password_confirmation)
   end
+
+  def edit_params
+    params.require(:user).permit(:user_name, :email)
+  end
+
 
 end
