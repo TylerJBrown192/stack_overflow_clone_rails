@@ -33,7 +33,6 @@ describe "the add a user process" do
     expect(page).to have_content 'grace'
   end
 
-
   it "deletes a user" do
     user = FactoryGirl.create(:user)
     visit log_in_path
