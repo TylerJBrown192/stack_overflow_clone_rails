@@ -6,11 +6,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:question_id])
+    @question = Question.find(params[:question_id])
     @comment = current_user.comments.new(comment_params)
     @comment.question_id = params[:question_id]
     if @comment.save
-      UserMailer.response_confirmation(@user).deliver
+      UserMailer.response_confirmation(current_user).deliver
       flash[:notice] = "Thanks for posting your comment!"
       redirect_to question_path(@comment.question_id)
     else
@@ -24,8 +24,14 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @question = Question.find(params[:question_id])
     @comment = Comment.find(params[:id])
-    if @comment.update(params[:comment])
+    if @question.comments(:first_response => true).any?
+      @question.comments.update_all(:first_response => false)
+      @comment.update(:first_response => true)
+      flash[:notice] = "Got it! Saving your favorite response now!"
+      redirect_to question_path(@comment.question_id)
+    elsif @comment.update(params[:comment])
       flash[:notice] = "Comment successfully updated!"
       redirect_to question_path(@comment.question_id)
     else

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323173019) do
+ActiveRecord::Schema.define(version: 20150326182854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150323173019) do
     t.text     "comment_content"
     t.integer  "question_id"
     t.integer  "user_id"
+    t.boolean  "first_response",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,6 +38,13 @@ ActiveRecord::Schema.define(version: 20150323173019) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

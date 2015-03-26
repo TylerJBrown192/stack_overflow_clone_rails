@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.text :comment_content
       t.integer :question_id
       t.integer :user_id
+      t.boolean :first_response, default: false
 
       t.timestamps
     end
