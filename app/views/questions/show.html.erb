@@ -17,8 +17,7 @@
     <%= comment.comment_content %>
 
     <% if current_user.id == comment.user_id %>
-    | <%= link_to "Edit", edit_question_comment_path(@question, comment) %> |
-      <%= link_to "Delete", question_comment_path(@question, comment),
+    | <%= link_to "Delete", question_comment_path(@question, comment),
                             :data => {:confirm => "You sure?",
                                       :method => "delete"} %>
 
